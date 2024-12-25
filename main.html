@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>KEITH-MD</title>
+  <meta name="theme-color" content="#f0a500">
+  <meta name="description" content="Pairing session for KEITH-MD.">
+  <meta name="author" content="keithkeizzah">
+  <meta name="robots" content="all"> 
+  <meta name="robots schedule" content="auto"> 
+  <meta name="distribution" content="global"> 
+  <meta name="googlebot" content="index,follow">
+  <meta property="og:title" content="KEITH-MD"/>
+  <meta name="description" content=" [+] Pairing session for KEITH-MD [+] "> 
+  <meta property="og:image" content="/bg.jpg">
+  <link href="/style.css" rel="stylesheet">
+  <link rel="shortcut icon" href="/icone.jpg">
+
+  <style>
+    /* External Font Imports */
+    @import url('https://fonts.googleapis.com/css?family=Rancho&effect=shadow-multiple|3d-float');
+    @import url('https://fonts.googleapis.com/css2?family=Aladin&family=Grenze+Gotisch:wght@900&family=Jolly+Lodger&family=New+Rocker&display=swap');
+
+    /* Body Styling */
+    body {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: flex-start;
+      height: 100vh;
+      margin: 0;
+      background-image: url("https://telegra.ph/file/562546f7d700f4f4798f1.jpg");
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: cover;
+      color: #f0f0f0;
+      font-family: 'Roboto', sans-serif;
+    }
+
+    /* Header Styling */
+    header {
+      text-align: center;
+      margin-top: 20px;
+      margin-bottom: 50px;
+    }
+
+    h1 {
+      font-family: 'New Rocker', cursive;
+      font-size: 3.2em;
+      color: Blue;
+      margin: 0;
+      text-shadow: 2px 2px 0 #000, -2px -2px 0 #000, -2px 2px 0 #000, 2px -2px 0 #000;
+    }
+
+    h2 {
+      font-family: 'Fira Code', sans-serif;
+      font-size: 0.8em;
+      color: blue;
+      margin: 5px 0 30px;
+      opacity: 0.8;
+    }
+
+    /* Audio Container Styling */
+    .audio-container {
+      margin-top: 50px;
+    }
+
+    .audio-container h2 {
+      color: #f0f0f0;
+      font-family: 'Courier New', Courier, monospace;
+      text-align: center;
+      margin-bottom: 20px;
+    }
+
+    /* Button Styling */
+    .btn {
+      --primary-color: green;
+      --secondary-color: blue;
+      width: 180px;
+      padding: 0.6em 1.5em;
+      background-color: rgba(0, 0, 0, 0.5);
+      backdrop-filter: blur(5px);
+      border-radius: 6px;
+      border: 1px solid var(--primary-color);
+      transition: 0.5s;
+      font-weight: 500;
+      font-size: 15px;
+      font-family: 'Fira Code', monospace;
+      text-transform: uppercase;
+      color: var(--secondary-color);
+      margin-bottom: 15px;
+      text-align: center;
+      text-decoration: none;
+      display: flex;
+      align-items: center;
+      justify-content: center;    
+    }
+
+    .btn:hover {
+      color: black;
+      font-weight: 600;
+    }
+
+    .btn:active {
+      filter: brightness(0.7);
+      transform: scale(0.98);
+    }
+
+    /* Footer Styling */
+    footer {
+      position: absolute;
+      bottom: 10px;
+      text-align: center;
+      font-family: 'Courier New', Courier, monospace;
+      font-size: 0.8em;
+      color: light green;
+    }
+
+    /* Sidebar Styling */
+    .menu-btn {
+      position: fixed;
+      top: 20px;
+      left: 20px;
+      background-color: transparent;
+      border: none;
+      cursor: pointer;
+      z-index: 10;
+      color: blue;
+      font-size: 24px;
+      padding: 10px;
+    }
+
+    .menu-btn:hover {
+      transform: scale(1.1);
+    }
+
+    .sidebar {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 250px;
+      height: 100vh;
+      background: rgba(0, 0, 0, 0.8);
+      backdrop-filter: blur(10px);
+      transform: translateX(-100%);
+      transition: transform 0.3s;
+      z-index: 5;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding-top: 30px;
+    }
+
+    .sidebar.show {
+      transform: translateX(0);
+    }
+
+    .sidebar img {
+      width: 100px;
+      height: 100px;
+      border-radius: 50%;
+      margin-bottom: 20px;
+      border: 2px dotted #047601;
+    }
+
+    .sidebar .profile-name {
+      font-family: 'Poppins', sans-serif;
+      font-size: 1.2em;
+      margin-bottom: 30px;
+      color: light green;
+    }
+
+    .sidebar .bio {
+      font-family: 'Courier New', Courier, monospace;
+      font-size: 0.8em;
+      color: blue;
+      margin-top: 0px;
+      margin-bottom: 30px;
+    }
+
+    /* Follow Button Styling */
+    .sidebar .follow-btn {
+      width: 150px;
+      padding: 0.4em 1em;
+      background-color: blue;
+      border-radius: 6px;
+      color: white;
+      font-family: 'Fira Code', monospace;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 10px;
+      opacity: 0.8;
+      background: linear-gradient(-45deg, #ffae00, #7e03aa, #00fffb);
+      animation: gradient 10s ease infinite;
+    }
+
+    @keyframes gradient {
+      0% {
+          background-position: 0% 50%;
+      }
+      50% {
+          background-position: 100% 50%;
+      }
+      100% {
+          background-position: 0% 50%;
+      }
+    }
+
+    .sidebar .follow-btn:hover {
+      color: luminous green;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1 id="titre">KEITH-MD</h1>
+    <h2>𝙿𝚛𝚘𝚟𝚒𝚍𝚎𝚜 𝚋𝚎𝚜𝚝 𝚠𝚊 𝚋𝚘𝚝𝚜 𝚎𝚟𝚎𝚛 𝚒𝚗 𝚑𝚒𝚜𝚝𝚘𝚛𝚢</h2>
+  </header>
+
+  <!-- Audio Container -->
+  <div class="audio-container">
+    <h2>Audio 1</h2>
+    <audio controls>
+      <source src="https://files.catbox.moe/qnhtbu.m4a" type="audio/m4a">
+      Your browser does not support the audio element.
+    </audio>
+  </div>
+
+  <!-- Sidebar and Menu Button -->
+  <button class="menu-btn" onclick="toggleSidebar()">&#9776;</button>
+  <div class="sidebar" id="sidebar">
+    <img src="https://telegra.ph/file/8a0989881d23f87d2626e.jpg" alt="Profile Picture" id="profile-pic">
+    <div class="profile-name" onclick="redirigerVersWhatsApp()">@keithkeizzah</div>
+    <div class="bio">𝚝𝚑𝚒𝚜 𝚒𝚜 𝙺𝚎𝚒𝚝𝚑 𝙺𝚎𝚒𝚣𝚣𝚊𝚑...</div>
+    <a href="https://chat.whatsapp.com/BXVmus83Yfq8SjNv63SAhJ" class="follow-btn" target="_blank">WA GROUP</a>
+    <a href="https://github.com/keithkeizzah/" class="follow-btn" target="_blank">GITHUB</a>
+    <a href="https://youtube.com/@keithkeizzah" class="follow-btn" target="_blank">YOUTUBE</a>
+  </div>
+
+  <!-- Buttons -->
+  <a href="/pair" class="btn">PAIR CODE</a>
+  <a href="/qr" class="btn">QR CODE</a>
+  <a href="https://github.com/keithkeizzah/ALPHA-MD1" class="btn">ALPHA-MD</a>
+
+  <!-- Footer -->
+  <footer>
+    &copy; 2024 | keithkeizzah
+  </footer>
+
+  <!-- Scripts -->
+  <script>
+    function toggleSidebar() {
+      const sidebar = document.getElementById('sidebar');
+      sidebar.classList.toggle('show');
+    }
+
+    function redirigerVersWhatsApp() {
+      window.location.href = "https://wa.me/+254748387615";
+    }
+  </script>
+</body>
+</html>
